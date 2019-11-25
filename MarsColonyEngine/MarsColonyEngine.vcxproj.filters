@@ -33,46 +33,46 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="WorldComponent.h">
-      <Filter>Pliki nagłówkowe\World</Filter>
-    </ClInclude>
-    <ClInclude Include="World.h">
-      <Filter>Pliki nagłówkowe\World</Filter>
-    </ClInclude>
-    <ClInclude Include="framework.h">
+    <ClInclude Include="include\framework.h">
       <Filter>Pliki nagłówkowe\Misc</Filter>
     </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>Pliki nagłówkowe\Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector2.h">
-      <Filter>Pliki nagłówkowe\Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="Iron.h">
+    <ClInclude Include="include\Iron.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="KRandom.h">
+    <ClInclude Include="include\KRandom.h">
       <Filter>Pliki nagłówkowe\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\pch.h">
+      <Filter>Pliki nagłówkowe\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World.h">
+      <Filter>Pliki nagłówkowe\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vector2.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="include\WorldComponent.h">
+      <Filter>Pliki nagłówkowe\World</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MarsColonyEngine.cpp">
+    <ClCompile Include="src\Iron.cpp">
+      <Filter>Pliki źródłowe\WorldComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\MarsColonyEngine.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="WorldComponent.cpp">
-      <Filter>Pliki źródłowe\World</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2.cpp">
+    <ClCompile Include="src\pch.cpp">
       <Filter>Pliki źródłowe\Misc</Filter>
     </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>Pliki źródłowe\Misc</Filter>
+    <ClCompile Include="src\Vector2.cpp">
+      <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="World.cpp">
+    <ClCompile Include="src\World.cpp">
       <Filter>Pliki źródłowe\World</Filter>
     </ClCompile>
-    <ClCompile Include="Iron.cpp">
-      <Filter>Pliki źródłowe\WorldComponents</Filter>
+    <ClCompile Include="src\WorldComponent.cpp">
+      <Filter>Pliki źródłowe\World</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

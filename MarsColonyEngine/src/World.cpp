@@ -11,13 +11,13 @@ void World::Generate() {
 
 	for (int i = 0; i < WORLD_SIZE; ++i) {
 		for (int j = 0; j < WORLD_SIZE; ++j) {
-			wComponents[i][j] = KRandom::rBool(30) ? new Iron() : nullptr;
+			wComponents[i][j] = KRandom::rBool(30) ? new Iron(Vector2(i ,j)) : nullptr;
 		}
 	}
 }
 
-WorldComponent* World::getWComponent(Vector2<int> position) const {
-	return getWComponent(position.x, position.y);
+WorldComponent* World::getWComponent(const Vector2& position) const {
+	return getWComponent(position.X(), position.Y());
 }
 
 WorldComponent* World::getWComponent(int x, int y) const {
@@ -28,4 +28,16 @@ WorldComponent* World::getWComponent(int x, int y) const {
 
 World::World(std::string name) {
 	Generate();
+}
+
+World::~World() {
+	if (wComponents) {
+		for (int i = 0; i < WORLD_SIZE; ++i) {
+			for (int j = 0; j < WORLD_SIZE; ++j) {
+				delete wComponents[i][j];
+			}
+			delete[] wComponents[i];
+		}
+		delete[] wComponents;
+	}
 }

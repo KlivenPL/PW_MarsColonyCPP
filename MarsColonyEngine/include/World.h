@@ -1,6 +1,6 @@
 #pragma once
 #include "WorldComponent.h"
-
+#include "Vector2.h"
 class World {
 private:
 	std::string name;
@@ -9,7 +9,8 @@ private:
 	void Generate();
 public:
 	const int WORLD_SIZE = 50;
-	WorldComponent* getWComponent(Vector2<int> position) const;
+	WorldComponent* getWComponent(const Vector2& position) const;
 	WorldComponent* getWComponent(int x, int y) const;
 	World(std::string name);
+	~World();
 };

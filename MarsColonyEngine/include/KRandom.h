@@ -1,6 +1,8 @@
 #pragma once
 #include "pch.h"
 #include <time.h>
+#include <cstdlib>
+
 class KRandom {
 public:
 	//Init(0) for random seed
