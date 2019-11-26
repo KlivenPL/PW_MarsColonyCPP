@@ -31,13 +31,13 @@
     <Filter Include="Pliki źródłowe\WorldComponents">
       <UniqueIdentifier>{ab9d0c3e-bddb-455d-b6bc-b330d5bd05f9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Pliki źródłowe\WorldComponents\Structures">
+      <UniqueIdentifier>{b1a2208d-fa8a-44f9-8fb7-7aab76b6ad5d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\framework.h">
       <Filter>Pliki nagłówkowe\Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="include\Iron.h">
-      <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="include\KRandom.h">
       <Filter>Pliki nagłówkowe\Misc</Filter>
@@ -48,11 +48,32 @@
     <ClInclude Include="include\World.h">
       <Filter>Pliki nagłówkowe\World</Filter>
     </ClInclude>
-    <ClInclude Include="include\Vector2.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="include\WorldComponent.h">
       <Filter>Pliki nagłówkowe\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vector2.h">
+      <Filter>Pliki nagłówkowe\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Action.h">
+      <Filter>Pliki nagłówkowe\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ActionHandler.h">
+      <Filter>Pliki nagłówkowe\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ActionProcedure.h">
+      <Filter>Pliki nagłówkowe\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ActionType.h">
+      <Filter>Pliki nagłówkowe\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Destructable.h">
+      <Filter>Pliki nagłówkowe\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Iron.h">
+      <Filter>Pliki nagłówkowe\WorldComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Ore.h">
+      <Filter>Pliki nagłówkowe\WorldComponents</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -65,14 +86,26 @@
     <ClCompile Include="src\pch.cpp">
       <Filter>Pliki źródłowe\Misc</Filter>
     </ClCompile>
-    <ClCompile Include="src\Vector2.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
     <ClCompile Include="src\World.cpp">
       <Filter>Pliki źródłowe\World</Filter>
     </ClCompile>
     <ClCompile Include="src\WorldComponent.cpp">
       <Filter>Pliki źródłowe\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Action.cpp">
+      <Filter>Pliki źródłowe\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActionHandler.cpp">
+      <Filter>Pliki źródłowe\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ActionProcedure.cpp">
+      <Filter>Pliki źródłowe\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Ore.cpp">
+      <Filter>Pliki źródłowe\WorldComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vector2.cpp">
+      <Filter>Pliki źródłowe\Misc</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -15,7 +15,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MarsColonySimulation.cpp">
+    <ClCompile Include="src\MarsColonySimulation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\scenarios\Scenario1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -107,6 +107,7 @@
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>$(solutionDir)MarsColonyEngine\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -152,15 +153,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\ActionProcedure.h" />
+    <ClInclude Include="include\ActionType.h" />
+    <ClInclude Include="include\Action.h" />
+    <ClInclude Include="include\ActionHandler.h" />
     <ClInclude Include="include\framework.h" />
+    <ClInclude Include="include\Destructable.h" />
     <ClInclude Include="include\Iron.h" />
     <ClInclude Include="include\KRandom.h" />
     <ClInclude Include="include\Vector2.h" />
     <ClInclude Include="include\World.h" />
     <ClInclude Include="include\pch.h" />
     <ClInclude Include="include\WorldComponent.h" />
+    <ClInclude Include="include\Ore.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ActionProcedure.cpp" />
+    <ClCompile Include="src\Action.cpp">
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">pch.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="src\ActionHandler.cpp" />
+    <ClCompile Include="src\Ore.cpp" />
     <ClCompile Include="src\Iron.cpp" />
     <ClCompile Include="src\MarsColonyEngine.cpp" />
     <ClCompile Include="src\pch.cpp">

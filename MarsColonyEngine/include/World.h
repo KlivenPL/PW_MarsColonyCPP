@@ -11,6 +11,7 @@ public:
 	const int WORLD_SIZE = 50;
 	WorldComponent* getWComponent(const Vector2& position) const;
 	WorldComponent* getWComponent(int x, int y) const;
+	std::string getName() const { return name; }
 	World(std::string name);
 	~World();
 };

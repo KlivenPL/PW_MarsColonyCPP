@@ -91,7 +91,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\Users\oskar\Documents\PW\OOP\PW_MarsColony\MarsColonyEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(solutionDir)MarsColonyEngine\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -155,7 +155,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="MarsColonySimulation.cpp" />
+    <ClCompile Include="src\MarsColonySimulation.cpp" />
+    <ClCompile Include="src\scenarios\Scenario1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MarsColonyEngine\MarsColonyEngine.vcxproj">

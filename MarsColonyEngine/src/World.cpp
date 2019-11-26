@@ -27,6 +27,7 @@ WorldComponent* World::getWComponent(int x, int y) const {
 }
 
 World::World(std::string name) {
+	this->name = name;
 	Generate();
 }
 
