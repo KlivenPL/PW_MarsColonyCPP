@@ -10,10 +10,12 @@ private:
 
 public:
 	void execute() {
-		//KRandom::Init(2019);
+		KRandom::Init(2019);
 
 		world = new World("xd");
 		std::string outStr;
 		Action::execute(ActionTypeGenerateWorld, *world, outStr);
+		auto world2 = new World("xd2");
+		Action::execute(ActionTypeGenerateWorld, *world2, outStr);
 	}
 };
