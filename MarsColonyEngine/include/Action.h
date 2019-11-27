@@ -1,20 +1,18 @@
 #pragma once
 #include "pch.h"
 #include "ActionType.h"
-#include "ActionHandler.h"
 #include "ActionProcedure.h"
 class Action {
 private:
 	ActionType actionType = ActionTypeNone;
 	std::string actionName;
 	ActionProcedure* actionProcedure;
-	static std::vector <Action*> actionDb;
-protected:
-	static void registerAction(Action* action);
+	inline static std::vector <Action*> actionDb;
 public:
-	Action(ActionType actionType, std::string actionName) :
-		actionType(actionType), actionName(actionName) {};
+	static void registerAction(Action* action);
+	Action(ActionType actionType, std::string actionName, ActionProcedure * actionProcedure) :
+		actionType(actionType), actionName(actionName), actionProcedure(actionProcedure) {};
 	~Action();
 
-	void execute(ActionType type, ActionHandler& handler, const std::string& args);
+	static void execute(ActionType type, IActionHandler& handler, const std::string& args);
 };

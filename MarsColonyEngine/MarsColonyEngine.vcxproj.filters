@@ -57,9 +57,6 @@
     <ClInclude Include="include\Action.h">
       <Filter>Pliki nagłówkowe\Misc</Filter>
     </ClInclude>
-    <ClInclude Include="include\ActionHandler.h">
-      <Filter>Pliki nagłówkowe\Misc</Filter>
-    </ClInclude>
     <ClInclude Include="include\ActionProcedure.h">
       <Filter>Pliki nagłówkowe\Misc</Filter>
     </ClInclude>
@@ -74,6 +71,9 @@
     </ClInclude>
     <ClInclude Include="include\Ore.h">
       <Filter>Pliki nagłówkowe\WorldComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="include\IActionHandler.h">
+      <Filter>Pliki nagłówkowe\Misc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

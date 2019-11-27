@@ -12,13 +12,14 @@ void Action::registerAction(Action *action) {
 }
 
 Action::~Action(){
+	std::cout << "Unregistering action " << actionName << std::endl;
 	int id = 0;
 	auto it = std::find(actionDb.begin(), actionDb.end(), this);
 	if (it != actionDb.end())
 		actionDb.erase(it);
 }
 
-void Action::execute(ActionType type, ActionHandler & handler, const std::string& args) {
+void Action::execute(ActionType type, IActionHandler & handler, const std::string& args) {
 	Action *action = nullptr;
 	for (auto tmpAction : actionDb) {
 		if (tmpAction->actionType == type) {
@@ -30,8 +31,8 @@ void Action::execute(ActionType type, ActionHandler & handler, const std::string
 		throw std::invalid_argument("Given action type is not registered");
 	}
 	std::string outStr;
-	if (action->actionProcedure->checkRequirements(handler, outStr)) {
-		if (action->actionProcedure->executeAction(handler, args, outStr)) {
+	if (action->actionProcedure->checkRequirements(outStr)) {
+		if (action->actionProcedure->executeAction(args, outStr)) {
 			std::cout << "Action " + action->actionName + " executed successfully." << std::endl;
 			return;
 		}

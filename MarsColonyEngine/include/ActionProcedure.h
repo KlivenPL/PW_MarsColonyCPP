@@ -1,13 +1,17 @@
 #pragma once
 #include "pch.h"
-#include "ActionHandler.h"
+#include "IActionHandler.h"
 #include <functional>
 class ActionProcedure {
 private:
-	std::function<bool(ActionHandler & actionHandler, std::string & outStr)> checkRequirementsFunc;
-	std::function<bool(ActionHandler & actionHandler, const std::string & args, std::string &outStr)> executeActionFunc;
+	std::function<bool(std::string & outStr)> checkRequirementsFunc;
+	std::function<bool(const std::string & args, std::string &outStr)> executeActionFunc;
 public:
-	bool checkRequirements(ActionHandler& actionHandler, std::string& outStr);
-	bool executeAction(ActionHandler& actionHandler, std::string args, std::string& outStr);
+	bool checkRequirements(std::string& outStr);
+	bool executeAction(std::string args, std::string& outStr);
+
+	ActionProcedure(std::function<bool(std::string & outStr)> requirements,
+		std::function<bool(const std::string & args, std::string & outStr)> exec):
+		checkRequirementsFunc(requirements), executeActionFunc(exec) {};
 };
 

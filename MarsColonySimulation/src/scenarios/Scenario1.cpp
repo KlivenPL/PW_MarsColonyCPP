@@ -1,14 +1,19 @@
+//#include "pch.h"
 #include <World.h>
+#include <vector>
+#include <functional>
+#include <Action.h>
+using namespace std;
 class Scenario1 {
 private:
 	World *world;
 
-	void createNewWorld() {
-		world = new World("Scenario 1 World");
-	}
 public:
 	void execute() {
-		KRandom::Init(2019);
-		createNewWorld();
+		//KRandom::Init(2019);
+
+		world = new World("xd");
+		std::string outStr;
+		Action::execute(ActionTypeGenerateWorld, *world, outStr);
 	}
 };

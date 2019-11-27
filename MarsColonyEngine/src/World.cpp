@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "World.h"
 #include "Iron.h"
+#include <Action.h>
 
 
 void World::Generate() {
@@ -16,6 +17,25 @@ void World::Generate() {
 	}
 }
 
+void World::registerActions() {
+	Action* createWorldAction = new Action(ActionTypeGenerateWorld, "Genrate world",
+		new ActionProcedure(
+			[this](std::string outStr) -> bool {
+				return wComponents == nullptr;
+			},
+
+			[this](std::string outStr, std::string args) -> bool {
+				Generate();
+				if (wComponents != nullptr) {
+					outStr = "World generated successfully";
+					return true;
+				}
+				outStr = "World was not generated successfully";
+				return false;
+			}));
+	Action::registerAction(createWorldAction);
+}
+
 WorldComponent* World::getWComponent(const Vector2& position) const {
 	return getWComponent(position.X(), position.Y());
 }
@@ -28,7 +48,7 @@ WorldComponent* World::getWComponent(int x, int y) const {
 
 World::World(std::string name) {
 	this->name = name;
-	Generate();
+	registerActions();
 }
 
 World::~World() {
