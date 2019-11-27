@@ -31,8 +31,8 @@ void Action::execute(ActionType type, IActionHandler & handler, const std::strin
 		throw std::invalid_argument("Given action type is not registered");
 	}
 	std::string outStr;
-	if (action->actionProcedure->checkRequirements(outStr)) {
-		if (action->actionProcedure->executeAction(args, outStr)) {
+	if (action->actionProcedure->checkRequirements(handler, outStr)) {
+		if (action->actionProcedure->executeAction(handler, args, outStr)) {
 			std::cout << "Action " + action->actionName + " executed successfully." << std::endl;
 			return;
 		}

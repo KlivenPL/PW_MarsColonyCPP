@@ -4,7 +4,7 @@
 #include "ActionProcedure.h"
 class Action {
 private:
-	ActionType actionType = ActionTypeNone;
+	ActionType actionType = ActionType::None;
 	std::string actionName;
 	ActionProcedure* actionProcedure;
 	inline static std::vector <Action*> actionDb;

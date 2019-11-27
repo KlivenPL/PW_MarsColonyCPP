@@ -18,20 +18,21 @@ void World::Generate() {
 }
 
 void World::registerActions() {
-	Action* createWorldAction = new Action(ActionTypeGenerateWorld, "Genrate world",
+	Action* createWorldAction = new Action(ActionType::GenerateWorld, "Genrate world",
 		new ActionProcedure(
-			[this](std::string outStr) -> bool {
-				return wComponents == nullptr;
+			[](auto &handler, auto outStr) -> bool {
+				if (typeid(handler) != typeid(World)) {
+					outStr = "Generate World action can be called on World instance only.";
+					return false;
+				}
+				return true;
 			},
 
-			[this](std::string outStr, std::string args) -> bool {
-				Generate();
-				if (wComponents != nullptr) {
-					outStr = "World generated successfully";
-					return true;
-				}
-				outStr = "World was not generated successfully";
-				return false;
+			[](auto &handler, auto outStr, auto args) -> bool {
+				World& world = dynamic_cast<World&>(handler);
+				world.Generate();
+				outStr = "World generated successfully";
+				return true;
 			}));
 	Action::registerAction(createWorldAction);
 }
@@ -48,7 +49,7 @@ WorldComponent* World::getWComponent(int x, int y) const {
 
 World::World(std::string name) {
 	this->name = name;
-	registerActions();
+	registerActions(); // TODO to zablokowac + enkapsulacja LIB
 }
 
 World::~World() {

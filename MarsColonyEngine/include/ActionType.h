@@ -1,5 +1,5 @@
 #pragma once
-enum ActionType {
-	ActionTypeNone,
-	ActionTypeGenerateWorld
+enum class ActionType {
+	None,
+	GenerateWorld
 };

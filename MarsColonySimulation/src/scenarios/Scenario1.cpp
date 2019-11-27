@@ -14,8 +14,8 @@ public:
 
 		world = new World("xd");
 		std::string outStr;
-		Action::execute(ActionTypeGenerateWorld, *world, outStr);
+		Action::execute(ActionType::GenerateWorld, *world, outStr);
 		auto world2 = new World("xd2");
-		Action::execute(ActionTypeGenerateWorld, *world2, outStr);
+		Action::execute(ActionType::GenerateWorld, *world2, outStr);
 	}
 };
